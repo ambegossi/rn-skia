@@ -11,8 +11,8 @@ const { Navigator, Screen } = createNativeStackNavigator<AppNavigationParams>();
 
 function AppNavigation() {
   return (
-    <Navigator>
-      <Screen name="Home" component={Home} options={{ headerShown: false }} />
+    <Navigator screenOptions={{ headerShown: false }}>
+      <Screen name="Home" component={Home} />
 
       <Screen name="Basic" component={Basic} />
     </Navigator>
