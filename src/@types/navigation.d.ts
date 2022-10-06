@@ -1,4 +1,4 @@
-import { AppNavigationParams } from '../src/navigation/AppNavigation';
+import { AppNavigationParams } from '../navigation/AppNavigation';
 
 declare global {
   namespace ReactNavigation {

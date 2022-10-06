@@ -1,10 +1,10 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Basic from '../screens/Basic';
+import RNLogo from '../screens/RNLogo';
 import Home from '../screens/Home';
 
 export type AppNavigationParams = {
   Home: undefined;
-  Basic: undefined;
+  RNLogo: undefined;
 };
 
 const { Navigator, Screen } = createNativeStackNavigator<AppNavigationParams>();
@@ -14,7 +14,7 @@ function AppNavigation() {
     <Navigator screenOptions={{ headerShown: false }}>
       <Screen name="Home" component={Home} />
 
-      <Screen name="Basic" component={Basic} />
+      <Screen name="RNLogo" component={RNLogo} />
     </Navigator>
   );
 }

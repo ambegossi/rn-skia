@@ -7,7 +7,7 @@ function Home() {
 
   return (
     <View style={{ flex: 1, justifyContent: 'center', padding: 16 }}>
-      <Button onPress={() => navigate('Basic')}>Basic</Button>
+      <Button onPress={() => navigate('RNLogo')}>React Native Logo</Button>
     </View>
   );
 }
