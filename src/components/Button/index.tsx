@@ -15,6 +15,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'tomato',
     padding: 16,
     borderRadius: 15,
+    marginBottom: 10,
   },
   text: {
     color: 'white',
