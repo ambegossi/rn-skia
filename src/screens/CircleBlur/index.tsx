@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import {
   add,
   BackdropBlur,
@@ -11,7 +12,6 @@ import {
   useLoop,
   vec,
 } from '@shopify/react-native-skia';
-import React, { useMemo } from 'react';
 import { useWindowDimensions } from 'react-native';
 
 const padding = 32;

@@ -12,6 +12,8 @@ function Home() {
       <Button onPress={() => navigate('CircleBlur')}>
         Glassmorphism - Circle Blur
       </Button>
+
+      <Button onPress={() => navigate('Card')}>Glassmorphism - Card</Button>
     </View>
   );
 }
