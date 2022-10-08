@@ -1,13 +1,16 @@
 import { useMemo } from 'react';
 import {
   add,
-  BackdropBlur,
+  BackdropFilter,
   Canvas,
   Circle,
+  DisplacementMap,
   Fill,
   LinearGradient,
   mix,
+  Offset,
   sub,
+  Turbulence,
   useComputedValue,
   useLoop,
   vec,
@@ -52,7 +55,16 @@ function CircleBlur() {
         />
       </Circle>
 
-      <BackdropBlur blur={20} clip={rect} />
+      <BackdropFilter
+        clip={rect}
+        filter={
+          <Offset x={-5} y={0}>
+            <DisplacementMap channelX="a" channelY="r" scale={50}>
+              <Turbulence freqX={0.01} freqY={0.05} octaves={4} />
+            </DisplacementMap>
+          </Offset>
+        }
+      />
     </Canvas>
   );
 }
