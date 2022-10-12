@@ -15,8 +15,12 @@ function Home() {
 
       <Button onPress={() => navigate('Card')}>Glassmorphism - Card</Button>
 
-      <Button onPress={() => navigate('NeumorphismRNButton')}>
-        Neumorphism - React Native Button
+      <Button onPress={() => navigate('NeumorphismButton')}>
+        Neumorphism - Button
+      </Button>
+
+      <Button onPress={() => navigate('NeumorphismSwitch')}>
+        Neumorphism - Switch
       </Button>
     </View>
   );

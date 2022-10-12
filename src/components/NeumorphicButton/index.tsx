@@ -14,7 +14,7 @@ const src = rect(0, 0, 24, 24);
 const border = rrect(src, 5, 5);
 const container = rrect(rect(1, 1, 22, 22), 5, 5);
 
-interface NeumorphismButtonProps {
+interface NeumorphicButtonProps {
   x: number;
   y: number;
   size: number;
@@ -22,13 +22,13 @@ interface NeumorphismButtonProps {
   children: ReactNode;
 }
 
-function NeumorphismButton({
+function NeumorphicButton({
   x,
   y,
   size,
   pressed,
   children,
-}: NeumorphismButtonProps) {
+}: NeumorphicButtonProps) {
   const c1 = useComputedValue(
     () => `rgba(255, 255, 255, ${mix(pressed.current, 0, 0.7)})`,
     [pressed],
@@ -60,4 +60,4 @@ function NeumorphismButton({
   );
 }
 
-export default NeumorphismButton;
+export default NeumorphicButton;

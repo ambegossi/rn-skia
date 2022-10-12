@@ -10,7 +10,7 @@ import {
   mix,
 } from '@shopify/react-native-skia';
 import { Dimensions } from 'react-native';
-import NeumorphismButton from '../../components/NeumorphismButton';
+import NeumorphicButton from '../../components/NeumorphicButton';
 
 const { width } = Dimensions.get('window');
 const PADDING = 32;
@@ -18,8 +18,9 @@ const size = width - PADDING * 2;
 const x = PADDING;
 const y = 75;
 
-function NeumorphismRNButton() {
+function NeumorphismButton() {
   const pressed = useValue(0);
+
   const onTouch = useTouchHandler({
     onStart: () => {
       runTiming(pressed, 1, { duration: 150 });
@@ -42,7 +43,7 @@ function NeumorphismRNButton() {
     <Canvas style={{ flex: 1 }} onTouch={onTouch}>
       <Fill color="#F0F0F3" />
 
-      <NeumorphismButton x={x} y={y} size={size} pressed={pressed}>
+      <NeumorphicButton x={x} y={y} size={size} pressed={pressed}>
         <Group transform={transform}>
           <Path
             style="fill"
@@ -55,9 +56,9 @@ function NeumorphismRNButton() {
             path="M8.16969 8.80276C9.01063 8.80276 9.69235 8.12104 9.69235 7.2801C9.69235 6.43916 9.01063 5.75745 8.16969 5.75745C7.32875 5.75745 6.64703 6.43916 6.64703 7.2801C6.64703 8.12104 7.32875 8.80276 8.16969 8.80276Z"
           />
         </Group>
-      </NeumorphismButton>
+      </NeumorphicButton>
     </Canvas>
   );
 }
 
-export default NeumorphismRNButton;
+export default NeumorphismButton;

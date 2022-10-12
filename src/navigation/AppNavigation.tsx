@@ -3,14 +3,16 @@ import RNLogo from '../screens/RNLogo';
 import Home from '../screens/Home';
 import CircleBlur from '../screens/CircleBlur';
 import Card from '../screens/Card';
-import NeumorphismRNButton from '../screens/NeumorphismRNButton';
+import NeumorphismButton from '../screens/NeumorphismButton';
+import NeumorphismSwitch from '../screens/NeumorphismSwitch';
 
 export type AppNavigationParams = {
   Home: undefined;
   RNLogo: undefined;
   CircleBlur: undefined;
   Card: undefined;
-  NeumorphismRNButton: undefined;
+  NeumorphismButton: undefined;
+  NeumorphismSwitch: undefined;
 };
 
 const { Navigator, Screen } = createNativeStackNavigator<AppNavigationParams>();
@@ -27,8 +29,16 @@ function AppNavigation() {
       <Screen name="Card" component={Card} />
 
       <Screen
-        name="NeumorphismRNButton"
-        component={NeumorphismRNButton}
+        name="NeumorphismButton"
+        component={NeumorphismButton}
+        options={{
+          headerShown: true,
+        }}
+      />
+
+      <Screen
+        name="NeumorphismSwitch"
+        component={NeumorphismSwitch}
         options={{
           headerShown: true,
         }}
