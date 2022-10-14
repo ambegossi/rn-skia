@@ -22,6 +22,10 @@ function Home() {
       <Button onPress={() => navigate('NeumorphismSwitch')}>
         Neumorphism - Switch
       </Button>
+
+      <Button onPress={() => navigate('NeumorphismClimate')}>
+        Neumorphism - Climate
+      </Button>
     </View>
   );
 }

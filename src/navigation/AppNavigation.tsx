@@ -5,6 +5,7 @@ import CircleBlur from '../screens/CircleBlur';
 import Card from '../screens/Card';
 import NeumorphismButton from '../screens/NeumorphismButton';
 import NeumorphismSwitch from '../screens/NeumorphismSwitch';
+import NeumorphismClimate from '../screens/NeumorphismClimate';
 
 export type AppNavigationParams = {
   Home: undefined;
@@ -13,6 +14,7 @@ export type AppNavigationParams = {
   Card: undefined;
   NeumorphismButton: undefined;
   NeumorphismSwitch: undefined;
+  NeumorphismClimate: undefined;
 };
 
 const { Navigator, Screen } = createNativeStackNavigator<AppNavigationParams>();
@@ -39,6 +41,14 @@ function AppNavigation() {
       <Screen
         name="NeumorphismSwitch"
         component={NeumorphismSwitch}
+        options={{
+          headerShown: true,
+        }}
+      />
+
+      <Screen
+        name="NeumorphismClimate"
+        component={NeumorphismClimate}
         options={{
           headerShown: true,
         }}

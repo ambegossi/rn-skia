@@ -23,12 +23,15 @@ import Ball from '../../components/Ball';
 
 function Card() {
   const { width, height } = useWindowDimensions();
-  const titleFont = useFont(require('../../assets/SF-Mono-Semibold.otf'), 24);
+  const titleFont = useFont(
+    require('../../assets/fonts/SF-Mono-Semibold.otf'),
+    24,
+  );
   const subtitleFont = useFont(
-    require('../../assets/SF-Mono-Semibold.otf'),
+    require('../../assets/fonts/SF-Mono-Semibold.otf'),
     18,
   );
-  const font = useFont(require('../../assets/SF-Mono-Semibold.otf'), 12);
+  const font = useFont(require('../../assets/fonts/SF-Mono-Semibold.otf'), 12);
 
   const CARD_WIDTH = width - 64;
   const CARD_HEIGHT = CARD_WIDTH * 0.61;
