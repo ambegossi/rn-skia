@@ -21,6 +21,7 @@ import Control from './components/Control';
 import Title from './components/Title';
 import Snow from './components/icons/Snow';
 import Mode from './components/Mode';
+import ProgressBar from './components/ProgressBar';
 
 function NeumorphismClimate() {
   const { width, height } = useWindowDimensions();
@@ -75,7 +76,7 @@ function NeumorphismClimate() {
 
         <Title title="Climate" />
 
-        {/* <ProgressBar progress={progress} /> */}
+        <ProgressBar progress={progress} />
 
         <Control
           x={0}

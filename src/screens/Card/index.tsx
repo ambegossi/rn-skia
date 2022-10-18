@@ -66,7 +66,7 @@ function Card() {
     [x, y],
   );
 
-  if (titleFont === null || subtitleFont === null || font === null) {
+  if (!titleFont || !subtitleFont || !font) {
     return null;
   }
 

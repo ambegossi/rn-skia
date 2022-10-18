@@ -21,8 +21,8 @@ const { Navigator, Screen } = createNativeStackNavigator<AppNavigationParams>();
 
 function AppNavigation() {
   return (
-    <Navigator screenOptions={{ headerShown: false }}>
-      <Screen name="Home" component={Home} />
+    <Navigator>
+      <Screen name="Home" component={Home} options={{ headerShown: false }} />
 
       <Screen name="RNLogo" component={RNLogo} />
 
@@ -30,29 +30,11 @@ function AppNavigation() {
 
       <Screen name="Card" component={Card} />
 
-      <Screen
-        name="NeumorphismButton"
-        component={NeumorphismButton}
-        options={{
-          headerShown: true,
-        }}
-      />
+      <Screen name="NeumorphismButton" component={NeumorphismButton} />
 
-      <Screen
-        name="NeumorphismSwitch"
-        component={NeumorphismSwitch}
-        options={{
-          headerShown: true,
-        }}
-      />
+      <Screen name="NeumorphismSwitch" component={NeumorphismSwitch} />
 
-      <Screen
-        name="NeumorphismClimate"
-        component={NeumorphismClimate}
-        options={{
-          headerShown: true,
-        }}
-      />
+      <Screen name="NeumorphismClimate" component={NeumorphismClimate} />
     </Navigator>
   );
 }
