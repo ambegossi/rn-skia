@@ -15,6 +15,8 @@ function Home() {
 
       <Button onPress={() => navigate('Card')}>Glassmorphism - Card</Button>
 
+      <Button onPress={() => navigate('Wallet')}>Charts - Wallet</Button>
+
       <Button onPress={() => navigate('NeumorphismButton')}>
         Neumorphism - Button
       </Button>
