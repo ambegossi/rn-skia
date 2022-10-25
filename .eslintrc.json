@@ -61,7 +61,8 @@
     "import/no-extraneous-dependencies": "off",
     "no-nested-ternary": "off",
     "react/prop-types": "off",
-    "react/no-unused-prop-types":  "off"
+    "react/no-unused-prop-types":  "off",
+    "react/no-unstable-nested-components": "off"
   },
   "settings": {
     "import/resolver": {
