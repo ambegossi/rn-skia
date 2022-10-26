@@ -1,5 +1,5 @@
-import { Group, Fill, rect } from '@shopify/react-native-skia';
 import { useWindowDimensions } from 'react-native';
+import { Group, Fill, rect } from '@shopify/react-native-skia';
 import BilinearGradient from '../BilinearGradient';
 
 function Background() {

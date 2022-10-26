@@ -1,22 +1,24 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import RNLogo from '../screens/RNLogo';
+import RNSkiaLogo from '../screens/RNSkiaLogo';
 import Home from '../screens/Home';
 import CircleBlur from '../screens/CircleBlur';
-import Card from '../screens/Card';
+import SuperbankCard from '../screens/SuperbankCard';
+import PremiumCard from '../screens/PremiumCard';
+import Wallet from '../screens/Wallet';
 import NeumorphismButton from '../screens/NeumorphismButton';
 import NeumorphismSwitch from '../screens/NeumorphismSwitch';
 import NeumorphismClimate from '../screens/NeumorphismClimate';
-import Wallet from '../screens/Wallet';
 
 export type AppNavigationParams = {
   Home: undefined;
-  RNLogo: undefined;
+  RNSkiaLogo: undefined;
   CircleBlur: undefined;
-  Card: undefined;
+  SuperbankCard: undefined;
+  PremiumCard: undefined;
+  Wallet: undefined;
   NeumorphismButton: undefined;
   NeumorphismSwitch: undefined;
   NeumorphismClimate: undefined;
-  Wallet: undefined;
 };
 
 const { Navigator, Screen } = createNativeStackNavigator<AppNavigationParams>();
@@ -26,23 +28,25 @@ function AppNavigation() {
     <Navigator>
       <Screen name="Home" component={Home} options={{ headerShown: false }} />
 
-      <Screen name="RNLogo" component={RNLogo} />
+      <Screen name="RNSkiaLogo" component={RNSkiaLogo} />
 
       <Screen name="CircleBlur" component={CircleBlur} />
 
-      <Screen name="Card" component={Card} />
+      <Screen name="SuperbankCard" component={SuperbankCard} />
 
-      <Screen name="NeumorphismButton" component={NeumorphismButton} />
-
-      <Screen name="NeumorphismSwitch" component={NeumorphismSwitch} />
-
-      <Screen name="NeumorphismClimate" component={NeumorphismClimate} />
+      <Screen name="PremiumCard" component={PremiumCard} />
 
       <Screen
         name="Wallet"
         component={Wallet}
         options={{ headerShown: false }}
       />
+
+      <Screen name="NeumorphismButton" component={NeumorphismButton} />
+
+      <Screen name="NeumorphismSwitch" component={NeumorphismSwitch} />
+
+      <Screen name="NeumorphismClimate" component={NeumorphismClimate} />
     </Navigator>
   );
 }
