@@ -54,11 +54,11 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   listContent: {
-    paddingHorizontal: 24,
     paddingVertical: 64,
   },
   item: {
     paddingVertical: 24,
+    paddingHorizontal: 24,
   },
   itemTitle: {
     fontWeight: 'bold',
