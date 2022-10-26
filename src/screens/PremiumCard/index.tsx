@@ -71,10 +71,6 @@ function PremiumCard() {
     [x, y],
   );
 
-  if (!membershipFont || !nameFont || !chipImage || !connectionSvg) {
-    return null;
-  }
-
   return (
     <Canvas style={{ flex: 1, backgroundColor: '#202020' }} onTouch={onTouch}>
       <Background />
@@ -106,44 +102,52 @@ function PremiumCard() {
 
                 <Shadow dx={0} dy={6} blur={20} color="black" />
 
-                <Text
-                  text="MEMBERSHIP"
-                  x={40}
-                  y={40}
-                  color="white"
-                  font={membershipFont}
-                />
+                {!!membershipFont && (
+                  <Text
+                    text="MEMBERSHIP"
+                    x={40}
+                    y={40}
+                    color="white"
+                    font={membershipFont}
+                  />
+                )}
 
                 <Group opacity={0.9}>
                   <Circle r={20} cy={40} cx={CARD_WIDTH - 40} color="#B8B8B8" />
                   <Circle r={20} cy={40} cx={CARD_WIDTH - 60} color="#5B5B5B" />
                 </Group>
 
-                <ImageSVG
-                  svg={connectionSvg}
-                  x={93}
-                  y={CARD_HEIGHT / 2 - 8}
-                  width={13}
-                  height={17}
-                />
+                {!!connectionSvg && (
+                  <ImageSVG
+                    svg={connectionSvg}
+                    x={93}
+                    y={CARD_HEIGHT / 2 - 8}
+                    width={13}
+                    height={17}
+                  />
+                )}
 
-                <Text
-                  text="DAVID R MEDEIROS"
-                  x={40}
-                  y={CARD_HEIGHT - 30}
-                  color="white"
-                  font={nameFont}
-                />
+                {!!nameFont && (
+                  <Text
+                    text="DAVID R MEDEIROS"
+                    x={40}
+                    y={CARD_HEIGHT - 30}
+                    color="white"
+                    font={nameFont}
+                  />
+                )}
               </Rect>
             </RoundedRect>
 
-            <Image
-              x={40}
-              y={CARD_HEIGHT / 2 - 15}
-              image={chipImage}
-              width={40}
-              height={30}
-            />
+            {!!chipImage && (
+              <Image
+                x={40}
+                y={CARD_HEIGHT / 2 - 15}
+                image={chipImage}
+                width={40}
+                height={30}
+              />
+            )}
           </BackdropBlur>
         </BackdropBlur>
       </BackdropBlur>
