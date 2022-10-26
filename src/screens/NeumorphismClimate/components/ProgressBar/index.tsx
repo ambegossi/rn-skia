@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-/* eslint-disable global-require */
 import {
   Box,
   BoxShadow,
@@ -19,6 +17,9 @@ import {
   Circle,
 } from '@shopify/react-native-skia';
 
+// Assets
+import sfMonoSemibold from '../../../../assets/fonts/SF-Mono-Semibold.otf';
+
 const r1 = 85;
 const path = Skia.Path.Make();
 path.addCircle(12 + r1, 12 + r1, r1);
@@ -33,10 +34,7 @@ interface ProgressBarProps {
 }
 
 function ProgressBar({ progress }: ProgressBarProps) {
-  const font = useFont(
-    require('../../../../assets/fonts/SF-Mono-Semibold.otf'),
-    32,
-  );
+  const font = useFont(sfMonoSemibold, 32);
   const text = useComputedValue(
     () => `${Math.round(progress.current * 100)}°C`,
     [progress],

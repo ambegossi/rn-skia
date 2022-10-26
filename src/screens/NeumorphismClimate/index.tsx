@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-/* eslint-disable global-require */
 import {
   Blur,
   Canvas,
@@ -23,12 +21,12 @@ import Snow from './components/icons/Snow';
 import Mode from './components/Mode';
 import ProgressBar from './components/ProgressBar';
 
+// Assets
+import sfProDisplayBold from '../../assets/fonts/SF-Pro-Display-Bold.otf';
+
 function NeumorphismClimate() {
   const { width, height } = useWindowDimensions();
-  const font = useFont(
-    require('../../assets/fonts/SF-Pro-Display-Bold.otf'),
-    17,
-  );
+  const font = useFont(sfProDisplayBold, 17);
 
   const translateY = useValue(0);
   const offsetY = useValue(0);

@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-/* eslint-disable global-require */
 import {
   BackdropBlur,
   Fill,
@@ -13,6 +11,9 @@ import {
   Image,
 } from '@shopify/react-native-skia';
 
+// Assets
+import settings from '../../../../assets/images/settings.png';
+
 const clip = rrect(rect(0, 596, 390, 844), 40, 40);
 
 interface ModeProps {
@@ -24,7 +25,7 @@ function Mode({ translateY }: ModeProps) {
     () => [{ translateY: translateY.current }],
     [translateY],
   );
-  const image = useImage(require('../../../../assets/images/settings.png'));
+  const image = useImage(settings);
 
   if (!image) {
     return null;

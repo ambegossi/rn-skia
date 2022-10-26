@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 import {
   interpolate,
   SkiaValue,
@@ -9,7 +8,8 @@ import {
 import { Graphs, PADDING } from '../../utils/model';
 import { GraphState } from '../Selection';
 
-const sfMono = require('../../../../assets/fonts/SF-Mono-Medium.otf');
+// Assets
+import sfMonoMedium from '../../../../assets/fonts/SF-Mono-Medium.otf';
 
 const format = (value: number) =>
   `$ ${Math.round(value)
@@ -25,8 +25,8 @@ interface LabelProps {
 }
 
 function Label({ state, y, graphs, width, height }: LabelProps) {
-  const titleFont = useFont(sfMono, 64);
-  const subtitleFont = useFont(sfMono, 24);
+  const titleFont = useFont(sfMonoMedium, 64);
+  const subtitleFont = useFont(sfMonoMedium, 24);
 
   const translateY = height + PADDING;
   const adjustedSize = height - PADDING * 2;

@@ -1,19 +1,17 @@
-/* eslint-disable global-require */
-/* eslint-disable @typescript-eslint/no-var-requires */
 import { Group, Text, useFont } from '@shopify/react-native-skia';
 import Button, { BUTTON_SIZE } from '../Button';
 import ChevronLeft from '../icons/ChevronLeft';
 import { Cog } from '../icons/Cog';
+
+// Assets
+import sfProDisplayBold from '../../../../assets/fonts/SF-Pro-Display-Bold.otf';
 
 interface TitleProps {
   title: string;
 }
 
 function Title({ title }: TitleProps) {
-  const font = useFont(
-    require('../../../../assets/fonts/SF-Pro-Display-Bold.otf'),
-    28,
-  );
+  const font = useFont(sfProDisplayBold, 28);
 
   if (!font) {
     return null;
