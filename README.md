@@ -4,8 +4,6 @@
 
 <h3 align="center"><a target="_blank" href="https://shopify.github.io/react-native-skia/">React Native Skia</a> examples playground</h3>
 
-<br/>
-
 <h2 align="center">
   <img height="700" src="./.github/skia.png">
 </h2>
