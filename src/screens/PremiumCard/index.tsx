@@ -1,28 +1,26 @@
-import { useMemo } from 'react';
-import { Dimensions } from 'react-native';
 import {
   BackdropBlur,
   Canvas,
+  rect,
+  rrect,
+  LinearGradient,
+  vec,
+  RoundedRect,
+  Shadow,
+  Text,
+  useFont,
   Circle,
   Group,
   Image,
-  ImageSVG,
-  LinearGradient,
-  rect,
-  Rect,
-  RoundedRect,
-  rrect,
-  runDecay,
-  Shadow,
-  Text,
-  useComputedValue,
-  useFont,
   useImage,
   useSVG,
-  useTouchHandler,
+  ImageSVG,
   useValue,
-  vec,
+  runDecay,
+  useComputedValue,
+  useTouchHandler,
 } from '@shopify/react-native-skia';
+import { Dimensions } from 'react-native';
 import Background from './components/Background';
 
 // Assets
@@ -33,18 +31,20 @@ import connection from '../../assets/icons/connection.svg';
 const { width, height } = Dimensions.get('window');
 
 const CARD_WIDTH = width - 64;
-const CARD_HEIGHT = CARD_WIDTH * 0.61;
+const CARD_HEIGHT = CARD_WIDTH * 0.6;
+const CARD_RADIUS = 15;
+
+const clip = rrect(
+  rect(0, 0, CARD_WIDTH, CARD_HEIGHT),
+  CARD_RADIUS,
+  CARD_RADIUS,
+);
 
 function PremiumCard() {
   const membershipFont = useFont(montserratBold, 10);
   const nameFont = useFont(montserratBold, 14);
   const chipImage = useImage(chip);
   const connectionSvg = useSVG(connection);
-
-  const clip = useMemo(
-    () => rrect(rect(0, 0, CARD_WIDTH, CARD_HEIGHT), 15, 15),
-    [],
-  );
 
   // Card animation
   const x = useValue((width - CARD_WIDTH) / 2);
@@ -72,7 +72,13 @@ function PremiumCard() {
   );
 
   return (
-    <Canvas style={{ flex: 1, backgroundColor: '#202020' }} onTouch={onTouch}>
+    <Canvas
+      style={{
+        flex: 1,
+        backgroundColor: '#202020',
+      }}
+      onTouch={onTouch}
+    >
       <Background />
 
       <BackdropBlur blur={3} clip={clip} transform={transform}>
@@ -84,7 +90,7 @@ function PremiumCard() {
               width={CARD_WIDTH}
               height={CARD_HEIGHT}
               style="stroke"
-              r={15}
+              r={CARD_RADIUS}
               strokeWidth={2}
             >
               <LinearGradient
@@ -93,11 +99,20 @@ function PremiumCard() {
                 colors={['rgba(255,255,255, 0.5)', 'rgba(255,31,1, 0.5)']}
               />
 
-              <Rect x={0} y={0} width={CARD_WIDTH} height={CARD_HEIGHT}>
+              <RoundedRect
+                x={0}
+                y={0}
+                width={CARD_WIDTH}
+                height={CARD_HEIGHT}
+                r={CARD_RADIUS}
+              >
                 <LinearGradient
                   start={vec(0, 0)}
                   end={vec(256, 256)}
-                  colors={['rgba(255,255,255, 0.4)', 'rgba(255,255,255, 0.1)']}
+                  colors={[
+                    'rgba(255, 255, 255, 0.4)',
+                    'rgba(255, 255, 255, 0.1)',
+                  ]}
                 />
 
                 <Shadow dx={0} dy={6} blur={20} color="black" />
@@ -119,11 +134,11 @@ function PremiumCard() {
 
                 {!!connectionSvg && (
                   <ImageSVG
-                    svg={connectionSvg}
-                    x={93}
-                    y={CARD_HEIGHT / 2 - 8}
                     width={13}
                     height={17}
+                    svg={connectionSvg}
+                    x={93}
+                    y={CARD_HEIGHT / 2 - 8.5}
                   />
                 )}
 
@@ -136,16 +151,16 @@ function PremiumCard() {
                     font={nameFont}
                   />
                 )}
-              </Rect>
+              </RoundedRect>
             </RoundedRect>
 
             {!!chipImage && (
               <Image
+                width={40}
+                height={30}
                 x={40}
                 y={CARD_HEIGHT / 2 - 15}
                 image={chipImage}
-                width={40}
-                height={30}
               />
             )}
           </BackdropBlur>

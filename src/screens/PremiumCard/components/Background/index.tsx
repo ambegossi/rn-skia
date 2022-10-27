@@ -1,11 +1,11 @@
-import { Group, Circle, RadialGradient, vec } from '@shopify/react-native-skia';
+import { Circle, RadialGradient, vec } from '@shopify/react-native-skia';
 
 function Background() {
   return (
-    <Group>
-      <Circle c={vec(100, 155)} r={30} color="#E70B0B" />
+    <>
+      <Circle cx={100} cy={155} r={30} color="#E70B0B" />
 
-      <Circle c={vec(325, 285)} r={100}>
+      <Circle cx={325} cy={285} r={100} color="white">
         <RadialGradient
           c={vec(250, 345)}
           r={200}
@@ -13,8 +13,8 @@ function Background() {
         />
       </Circle>
 
-      <Circle c={vec(90, 480)} r={70} color="#FFA800" />
-    </Group>
+      <Circle cx={90} cy={480} r={70} color="#FFA800" />
+    </>
   );
 }
 
