@@ -5,7 +5,7 @@ function Background() {
     <>
       <Circle cx={100} cy={155} r={30} color="#E70B0B" />
 
-      <Circle cx={325} cy={285} r={100} color="white">
+      <Circle cx={325} cy={285} r={100}>
         <RadialGradient
           c={vec(250, 345)}
           r={200}
