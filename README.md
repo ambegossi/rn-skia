@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="Skia logo" height="72" title="Skia" src=".github/logo.png" />
+  <img alt="Skia" height="72" title="Skia" src=".github/logo.png" />
 </h1>
 
 <h3 align="center"><a target="_blank" href="https://shopify.github.io/react-native-skia/">React Native Skia</a> examples playground</h3>
